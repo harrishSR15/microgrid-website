@@ -1,3 +1,38 @@
+function loadPreviousDayData() {
+  const tbody = document.querySelector("#prevTable tbody");
+  tbody.innerHTML = "";
+
+  // Yesterday’s date
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const dateStr = yesterday.toLocaleDateString("en-GB"); // e.g. 01/11/2025
+
+  // Generate 5 fake readings
+  for (let i = 0; i < 5; i++) {
+    const time = `${8 + i * 2}:00`;
+    const voltage = (220 + Math.random() * 10).toFixed(2);
+    const current = (1 + Math.random()).toFixed(2);
+    const power = (voltage * current).toFixed(2);
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${dateStr}</td>
+      <td>${time}</td>
+      <td>${voltage}</td>
+      <td>${current}</td>
+      <td>${power}</td>
+    `;
+    tbody.appendChild(row);
+  }
+}
+
+// Load data when page opens
+loadPreviousDayData();
+
+
+// Load previous readings once when page starts
+loadPreviousDayData();
+
 // Create chart using Chart.js
 const ctx = document.getElementById('powerChart').getContext('2d');
 const powerData = {
