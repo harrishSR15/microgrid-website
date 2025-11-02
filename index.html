@@ -18,6 +18,46 @@
 </div>
 <canvas id="powerChart"></canvas>
 
+<!-- 🟦 Previous Day Power Graph -->
+<div class="card">
+  <h2>Previous Day Power Graph</h2>
+  <canvas id="prevPowerChart"></canvas>
+</div>
+
+<main>
+  <div class="card">
+    <h2>Live Readings</h2>
+    <p><strong>Voltage:</strong> <span id="voltage">--</span> V</p>
+    <p><strong>Current:</strong> <span id="current">--</span> A</p>
+    <p><strong>Power:</strong> <span id="power">--</span> W</p>
+    <p><small>Last Updated: <span id="timestamp">--</span></small></p>
+  </div>
+
+  <canvas id="powerChart"></canvas>
+
+  <div class="card">
+    <h2>Previous Day Readings</h2>
+    <table id="prevTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Voltage (V)</th>
+          <th>Current (A)</th>
+          <th>Power (W)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- New Graph -->
+  <div class="card">
+    <h2>Previous Day Power Graph</h2>
+    <canvas id="prevPowerChart"></canvas>
+  </div>
+</main>
+
 
 <!DOCTYPE html>
 <html lang="en">

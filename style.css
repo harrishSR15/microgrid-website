@@ -64,3 +64,10 @@ th, td {
   padding: 6px;
   text-align: center;
 }
+
+#prevPowerChart {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 600px;
+}
+

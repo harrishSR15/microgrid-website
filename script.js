@@ -86,3 +86,60 @@ function updateReadings() {
 
 // Update every 2 seconds
 setInterval(updateReadings, 2000);
+
+// === Previous Day Power Chart ===
+const prevCtx = document.getElementById('prevPowerChart').getContext('2d');
+
+// Create empty chart
+const prevPowerData = {
+  labels: [],
+  datasets: [{
+    label: 'Previous Day Power (W)',
+    data: [],
+    borderColor: 'rgb(255, 99, 132)',
+    fill: false,
+    tension: 0.2
+  }]
+};
+
+const prevPowerChart = new Chart(prevCtx, {
+  type: 'line',
+  data: prevPowerData,
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        title: { display: true, text: 'Time' }
+      },
+      y: {
+        title: { display: true, text: 'Power (W)' }
+      }
+    }
+  }
+});
+
+// Function to load previous day's simulated power data
+function loadPreviousDayGraph() {
+  prevPowerData.labels = [];
+  prevPowerData.datasets[0].data = [];
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const dateStr = yesterday.toLocaleDateString('en-GB');
+
+  // Simulate 6 readings (8AM to 6PM)
+  for (let i = 0; i < 6; i++) {
+    const time = `${8 + i * 2}:00`;
+    const voltage = 220 + Math.random() * 10;
+    const current = 1 + Math.random();
+    const power = (voltage * current).toFixed(2);
+
+    prevPowerData.labels.push(time);
+    prevPowerData.datasets[0].data.push(power);
+  }
+
+  prevPowerChart.update();
+}
+
+// Call the function once when page loads
+loadPreviousDayGraph();
