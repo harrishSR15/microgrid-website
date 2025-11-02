@@ -71,3 +71,12 @@ th, td {
   max-width: 600px;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

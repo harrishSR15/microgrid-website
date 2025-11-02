@@ -1,3 +1,7 @@
+fetch("https://yourserver/data")
+  .then(res => res.json())
+  .then(data => updateChart(data));
+
 function loadPreviousDayData() {
   const tbody = document.querySelector("#prevTable tbody");
   tbody.innerHTML = "";
