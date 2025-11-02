@@ -1,3 +1,23 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background: #0077ff;
+  color: white;
+}
+
+td {
+  background: #f9f9f9;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f8fb;
@@ -38,4 +58,9 @@ footer {
   margin-top: 50px;
   font-size: 0.9rem;
   color: #555;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: center;
 }
